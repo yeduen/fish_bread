@@ -31,6 +31,19 @@ def order_bread():
         else:
             print("팥붕어빵, 슈크림붕어빵, 초코붕어빵 중 하나의 맛만 선택해주세요")
 
+#관리자 모드
+def admin_mode():
+    while True:
+        bread_type = input("추가할 붕어빵을 선택하세요 (팥붕어빵, 슈크림붕어빵, 초코붕어빵) 또는 '종료' 입력 : ")
+        if bread_type == "종료":
+            break
+        if bread_type in stock:
+            bread_count = int(input("추가할 갯수를 입력하세요 : ")) #5개 입력
+            stock[bread_type] += bread_count #stock[bread_type] = stock[bread_type] + bread_count
+            print(f"{bread_type}의 재고가 {bread_count}개 추가되어 현재 {stock[bread_type]}개 입니다.")
+        else:
+            print("올바른 메뉴를 입력해주세요.")
+
 # 메인 기능 선택
 while True:
     mode = input("원하는 모드를 선택하세요 (주문, 관리자, 종료) :")
@@ -39,10 +52,8 @@ while True:
         break
     elif mode == "주문":
         order_bread() #len()
-    elif mede == "관리자":
+    elif mode == "관리자":
         admin_mode()
-
-calculate_sales()
 
     
         
