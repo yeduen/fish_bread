@@ -19,7 +19,7 @@ def calculate_sales():
     print(f"오늘의 총 매출은 {total_sales}입니다.")
 
 while True:
-    mode = input("원하는 모드를 선택하세요 (주문, 관리자, 종료) :")
+    mode = input("원하는 모드를 선택하세요 (주문, 관리자, 매출, 종료) :")
     if mode == "종료":
         print("시스템을 종료합니다.")
         break
@@ -27,7 +27,7 @@ while True:
         order_bread()
     elif mede == "관리자":
         admin_mode()
-
+    
 calculate_sales()      
 
            
